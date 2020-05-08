@@ -26,7 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="git commit now">
+    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="resolved bug and simplified calculation!">
+      <change afterPath="$PROJECT_DIR$/hash_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.py" afterDir="false" />
     </list>
@@ -34,6 +35,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -44,11 +52,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UnPJWgJkzC5VuOmnYnG4KHT1mM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -104,7 +116,8 @@
       <workItem from="1588709323264" duration="40000" />
       <workItem from="1588709461064" duration="1165000" />
       <workItem from="1588945132325" duration="43000" />
-      <workItem from="1588945385823" duration="5880000" />
+      <workItem from="1588945385823" duration="6238000" />
+      <workItem from="1588961131643" duration="6443000" />
     </task>
     <task id="LOCAL-00001" summary="git commit now">
       <created>1588709806858</created>
@@ -113,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588709806858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="resolved bug and simplified calculation!">
+      <created>1588955018138</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588955018138</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,34 +194,36 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="git comm" />
     <MESSAGE value="with commented code" />
     <MESSAGE value="git commit now" />
-    <option name="LAST_COMMIT_MESSAGE" value="git commit now" />
+    <MESSAGE value="resolved bug and simplified calculation!" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolved bug and simplified calculation!" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="723" height="182" key="GridCell.Tab.0.bottom" timestamp="1588954879167">
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom" timestamp="1588968368701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="182" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588954879167" />
-    <state width="723" height="182" key="GridCell.Tab.0.center" timestamp="1588954879166">
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
+    <state width="1493" height="184" key="GridCell.Tab.0.center" timestamp="1588968368701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="182" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
-    <state width="723" height="182" key="GridCell.Tab.0.left" timestamp="1588954879166">
+    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
+    <state width="1493" height="184" key="GridCell.Tab.0.left" timestamp="1588968368701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="182" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
-    <state width="723" height="182" key="GridCell.Tab.0.right" timestamp="1588954879166">
+    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
+    <state width="1493" height="184" key="GridCell.Tab.0.right" timestamp="1588968368701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="182" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588710119632">
+    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588955157015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588710119632" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588955157015" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1588954879134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1588968368671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

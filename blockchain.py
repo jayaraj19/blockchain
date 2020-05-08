@@ -1,4 +1,9 @@
-import functools
+from functools import reduce
+import hashlib as hl
+import json
+from collections import OrderedDict
+
+from hash_util import *
 
 """
 DATA STRUCTURE
@@ -23,7 +28,8 @@ MINING_REWARD = 10
 genesis_block = {
     'previous_hash': '',
     'index': 0,
-    'transactions': []
+    'transactions': [],
+    'proof': 100
 }
 # blockchain containing all the blocks,blockchain is a list of blocks
 # Initializing our (empty) blockchain list
@@ -42,13 +48,37 @@ owner = 'JAYRAJ'
 participants = {'JAYRAJ'}
 
 
-def hash_block(block):
-    """Hashes a block and returns a string representation of it.
+def valid_proof(transactions, last_hash, proof):
+    """Validate a proof of work number and see if it solves the puzzle algorithm (two leading 0s)
 
-       Arguments:
-           :block: The block that should be hashed.
-       """
-    return '-'.join([str(block[key]) for key in block])
+        Arguments:
+            :transactions: The transactions of the block for which the proof is created.
+            :last_hash: The previous block's hash which will be stored in the current block.
+            :proof: The proof number we're testing.
+        """
+    # Create a string with all the hash inputs
+    guess = (str(transactions) + str(last_hash) + str(proof)).encode()
+    # Hash the string
+    # IMPORTANT: This is NOT the same hash as will be stored in the previous_hash.
+    # It's a not a block's hash. It's only used for the proof-of-work algorithm.
+    guess_hash = hl.sha256(guess).hexdigest()
+    print(guess_hash)
+    # Only a hash (which is based on the above inputs) which starts with two 0s is treated as valid
+    # This condition is of course defined by you. You could also require 10 leading 0s -
+    # this would take significantly longer (and this allows you to control the speed at which new blocks can be added)
+    return guess_hash[0:2] == '00'
+
+
+def proof_of_work():
+    """Generate a proof of work for the open transactions,
+    the hash of the previous block and a random number (which is guessed until it fits)."""
+    last_block = blockchain[-1]
+    last_hash = hash_block(last_block)
+    proof = 0
+    # Try different PoW numbers and return the first valid one
+    while not valid_proof(open_transaction, last_hash, proof):
+        proof += 1
+    return proof
 
 
 def get_balance(participant):
@@ -67,10 +97,10 @@ def get_balance(participant):
     # This fetches sent amounts of open transactions (to avoid double spending)
     open_tx_sender = [tx['amount'] for tx in open_transaction if tx['sender'] == participant]
     tx_sender.append(open_tx_sender)
-    print("tx_sender=", tx_sender)
+    # print("tx_sender=", tx_sender)
     # Calculating the total amount of coins sent
-    amount_sent = functools.reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0,
-                                   tx_sender, 0)
+    amount_sent = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0,
+                         tx_sender, 0)
     # amount_sent = 0
     # for tx in tx_sender:
     #     if len(tx) > 0:
@@ -82,8 +112,8 @@ def get_balance(participant):
     # We ignore open transactions here because you shouldn't be able to spend coins before the transaction was confirmed + included in a block
     tx_recipient = [[tx['amount'] for tx in block['transactions'] if tx['recipient'] == participant] for block in
                     blockchain]
-    amount_received = functools.reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0,
-                                       tx_recipient, 0)
+    amount_received = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0,
+                             tx_recipient, 0)
     # amount_received = 0
     # for tx in tx_recipient:
     #     if len(tx) > 0:
@@ -118,11 +148,14 @@ def add_transaction(recipient, sender=owner, amount=1.0):
         :recipient: The recipient of the coins.
         :amount: The amount of coins sent with the transaction (default = 1.0)
     """
-    # creating a transaction dictionary
-    transaction = {
-        'sender': sender,
-        'recipient': recipient,
-        'amount': amount}
+    # creating a transaction dictionary(using ordered dictionary)
+    # transaction = {
+    #     'sender': sender,
+    #     'recipient': recipient,
+    #     'amount': amount}
+    transaction = OrderedDict([('sender', sender),
+                               ('recipient', recipient),
+                               ('amount', amount)])
     # if the verification of transaction is true appending it to open transaction
     if verify_transaction(transaction):
         open_transaction.append(transaction)
@@ -137,22 +170,29 @@ def mine_block():
     # Fetch the currently last block of the blockchain
     last_block = blockchain[-1]
     # hashing the last block
-    hashed_block = hash_block(last_block)
     # Hash the last block (=> to be able to compare it to the stored hash value)
-    reward_transaction = {
-        'sender': 'MINING',
-        'recipient': owner,
-        'amount': MINING_REWARD
-    }
+    hashed_block = hash_block(last_block)
+
+    proof = proof_of_work()
+
+    # reward_transaction = {
+    #     'sender': 'MINING',
+    #     'recipient': owner,
+    #     'amount': MINING_REWARD
+    # }
+    # ordered dictionary for reward_transaction
+    reward_transaction = OrderedDict([('sender', 'MINING'), ('recipient', owner), ('amount', MINING_REWARD)])
     # adding reward transaction to open_transaction
     # Copy transaction instead of manipulating the original open_transactions list
-    # This ensures that if for some reason the mining should fail, we don't have the reward transaction stored in the open transactions
+    # This ensures that if for some reason the mining should fail,
+    # we don't have the reward transaction stored in the open transactions
     copied_transactions = open_transaction[:]
     copied_transactions.append(reward_transaction)
     block = {
         'previous_hash': hashed_block,
         'index': len(blockchain),
-        'transactions': copied_transactions
+        'transactions': copied_transactions,
+        'proof': proof
     }
     blockchain.append(block)
     return True
@@ -187,6 +227,16 @@ def verify_chain():
         if index == 0:
             continue
         if block['previous_hash'] != hash_block(blockchain[index - 1]):
+            return False
+
+        # REWARD TRANSACTION:
+        # last transaction in reward_transaction => reward of mining in the block we are mining
+        # Reward transaction is appended after calculation of proof of work
+        # So the valid proof need to be calculated excluding the reward_transaction
+
+        # Calculating if proof of work is valid
+        if not valid_proof(block['transactions'][:-1], block['previous_hash'], block['proof']):
+            print('Proof of work is invalid')
             return False
     return True
 
@@ -225,7 +275,7 @@ while waiting_for_input:
 
     # Mine block
     elif user_choice == '2':
-        """ after mining that is adding open_transaction to a block ,
+        """ after mining that we is adding open_transaction to a block ,
         we create again a empty open_transaction for next block to come. """
         if mine_block():
             open_transaction = []
