@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="" />
+    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="git commit now">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="jayaraj19 &lt;jayaraj.cse.97@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UnPJWgJkzC5VuOmnYnG4KHT1mM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -65,7 +102,18 @@
       <workItem from="1576820467757" duration="4506000" />
       <workItem from="1576850552942" duration="2765000" />
       <workItem from="1588709323264" duration="40000" />
+      <workItem from="1588709461064" duration="1165000" />
+      <workItem from="1588945132325" duration="43000" />
+      <workItem from="1588945385823" duration="5880000" />
     </task>
+    <task id="LOCAL-00001" summary="git commit now">
+      <created>1588709806858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588709806858</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,16 +122,86 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git comm" />
+    <MESSAGE value="with commented code" />
+    <MESSAGE value="git commit now" />
+    <option name="LAST_COMMIT_MESSAGE" value="git commit now" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="723" height="182" key="GridCell.Tab.0.bottom" timestamp="1588954879167">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="182" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588954879167" />
+    <state width="723" height="182" key="GridCell.Tab.0.center" timestamp="1588954879166">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="182" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
+    <state width="723" height="182" key="GridCell.Tab.0.left" timestamp="1588954879166">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="182" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
+    <state width="723" height="182" key="GridCell.Tab.0.right" timestamp="1588954879166">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="182" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588954879166" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588710119632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588710119632" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1576851906700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1588954879134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
