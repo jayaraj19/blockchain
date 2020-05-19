@@ -26,10 +26,16 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="resolved bug and simplified calculation!">
-      <change afterPath="$PROJECT_DIR$/hash_util.py" afterDir="false" />
+    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="adding proof of work.">
+      <change afterPath="$PROJECT_DIR$/block.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blockchain.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blockchain.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +123,12 @@
       <workItem from="1588709461064" duration="1165000" />
       <workItem from="1588945132325" duration="43000" />
       <workItem from="1588945385823" duration="6238000" />
-      <workItem from="1588961131643" duration="6443000" />
+      <workItem from="1588961131643" duration="7143000" />
+      <workItem from="1589305204716" duration="28000" />
+      <workItem from="1589642559009" duration="2217000" />
+      <workItem from="1589650124151" duration="8414000" />
+      <workItem from="1589868774200" duration="3659000" />
+      <workItem from="1589877736330" duration="5989000" />
     </task>
     <task id="LOCAL-00001" summary="git commit now">
       <created>1588709806858</created>
@@ -133,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588955018138</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding proof of work.">
+      <created>1588968913426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588968913426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,31 +217,67 @@
     <MESSAGE value="with commented code" />
     <MESSAGE value="git commit now" />
     <MESSAGE value="resolved bug and simplified calculation!" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolved bug and simplified calculation!" />
+    <MESSAGE value="adding proof of work." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding proof of work." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="184" key="GridCell.Tab.0.bottom" timestamp="1588968368701">
+    <state x="519" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589653639687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
-    <state width="1493" height="184" key="GridCell.Tab.0.center" timestamp="1588968368701">
+    <state x="519" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589653639687" />
+    <state x="883" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589883900227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
-    <state width="1493" height="184" key="GridCell.Tab.0.left" timestamp="1588968368701">
+    <state x="883" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589883900227" />
+    <state width="726" height="184" key="GridCell.Tab.0.bottom" timestamp="1589884114610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
-    <state width="1493" height="184" key="GridCell.Tab.0.right" timestamp="1588968368701">
+    <state width="726" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589884114610" />
+    <state width="726" height="184" key="GridCell.Tab.0.center" timestamp="1589884114609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588968368701" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588955157015">
+    <state width="726" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589884114609" />
+    <state width="726" height="184" key="GridCell.Tab.0.left" timestamp="1589884114609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588955157015" />
+    <state width="726" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589884114609" />
+    <state width="726" height="184" key="GridCell.Tab.0.right" timestamp="1589884114610">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="726" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589884114610" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1589655940732">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589655940732" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1589655940732">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589655940731" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1589655940731">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589655940731" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1589655940732">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589655940732" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1588968932154">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588968932154" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1588968368671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1589884383725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
