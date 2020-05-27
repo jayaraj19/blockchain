@@ -26,13 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="wallet added">
-      <change afterPath="$PROJECT_DIR$/OLD_node.py" afterDir="false" />
+    <list default="true" id="e18edb6d-2289-4690-949f-ae482318cb7c" name="Default Changelist" comment="restapi implemented">
+      <change afterPath="$PROJECT_DIR$/ui/node.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wallet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wallet.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -137,7 +136,11 @@
       <workItem from="1590172656676" duration="1347000" />
       <workItem from="1590174286167" duration="1129000" />
       <workItem from="1590212348602" duration="10113000" />
-      <workItem from="1590263481678" duration="2544000" />
+      <workItem from="1590263481678" duration="3750000" />
+      <workItem from="1590267277738" duration="837000" />
+      <workItem from="1590328451289" duration="356000" />
+      <workItem from="1590516524872" duration="1009000" />
+      <workItem from="1590558333126" duration="5798000" />
     </task>
     <task id="LOCAL-00001" summary="git commit now">
       <created>1588709806858</created>
@@ -195,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590172827213</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="restapi implemented">
+      <created>1590266200858</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590266200858</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +277,8 @@
     <MESSAGE value="added node class" />
     <MESSAGE value="cleaner code and devided into classes" />
     <MESSAGE value="wallet added" />
-    <option name="LAST_COMMIT_MESSAGE" value="wallet added" />
+    <MESSAGE value="restapi implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="restapi implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590214896361">
@@ -282,22 +293,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="883" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1590219846536" />
-    <state width="724" height="242" key="GridCell.Tab.0.bottom" timestamp="1590265810194">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom" timestamp="1590583100698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590265810194" />
-    <state width="724" height="242" key="GridCell.Tab.0.center" timestamp="1590265810194">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590583100698" />
+    <state width="1493" height="242" key="GridCell.Tab.0.center" timestamp="1590583100698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590265810194" />
-    <state width="724" height="242" key="GridCell.Tab.0.left" timestamp="1590265810194">
+    <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590583100698" />
+    <state width="1493" height="242" key="GridCell.Tab.0.left" timestamp="1590583100698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590265810194" />
-    <state width="724" height="242" key="GridCell.Tab.0.right" timestamp="1590265810194">
+    <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590583100698" />
+    <state width="1493" height="242" key="GridCell.Tab.0.right" timestamp="1590583100698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590265810194" />
+    <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590583100698" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1589655940732">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -322,10 +333,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="657" y="280" width="388" height="263" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1590172919700" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590172998860">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1590569168183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590172998860" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590569168183" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590266215476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590266215476" />
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590172963915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -347,6 +362,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1590265810177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blockchain$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1590581177892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

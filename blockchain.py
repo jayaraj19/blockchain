@@ -16,7 +16,6 @@ MINING_REWARD = 10
 
 print(__name__)
 
-
 class Blockchain:
     """The Blockchain class manages the chain of blocks as well as open transactions and the node on which it's running.
     
@@ -25,7 +24,6 @@ class Blockchain:
         :open_transactions (private): The list of open transactions
         :hosting_node: The connected node (which runs the blockchain).
     """
-
     def __init__(self, hosting_node_id):
         """The constructor of the Blockchain class."""
         # Our starting block for the blockchain
@@ -43,9 +41,10 @@ class Blockchain:
         return self.__chain[:]
 
     # The setter for the chain property
-    @chain.setter
+    @chain.setter 
     def chain(self, val):
         self.__chain = val
+
 
     def get_open_transactions(self):
         """Returns a copy of the open transactions list."""
@@ -87,8 +86,7 @@ class Blockchain:
         try:
             with open('blockchain.txt', mode='w') as f:
                 saveable_chain = [block.__dict__ for block in [Block(block_el.index, block_el.previous_hash, [
-                    tx.__dict__ for tx in block_el.transactions], block_el.proof, block_el.timestamp) for block_el in
-                                                               self.__chain]]
+                    tx.__dict__ for tx in block_el.transactions], block_el.proof, block_el.timestamp) for block_el in self.__chain]]
                 f.write(json.dumps(saveable_chain))
                 f.write('\n')
                 saveable_tx = [tx.__dict__ for tx in self.__open_transactions]
@@ -128,13 +126,13 @@ class Blockchain:
         tx_sender.append(open_tx_sender)
         print(tx_sender)
         amount_sent = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt)
-        if len(tx_amt) > 0 else tx_sum + 0, tx_sender, 0)
+                             if len(tx_amt) > 0 else tx_sum + 0, tx_sender, 0)
         # This fetches received coin amounts of transactions that were already included in blocks of the blockchain
         # We ignore open transactions here because you shouldn't be able to spend coins before the transaction was confirmed + included in a block
         tx_recipient = [[tx.amount for tx in block.transactions
                          if tx.recipient == participant] for block in self.__chain]
         amount_received = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt)
-        if len(tx_amt) > 0 else tx_sum + 0, tx_recipient, 0)
+                                 if len(tx_amt) > 0 else tx_sum + 0, tx_recipient, 0)
         # Return the total balance
         return amount_received - amount_sent
 
